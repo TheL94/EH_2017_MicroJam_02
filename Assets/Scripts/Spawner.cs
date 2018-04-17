@@ -28,6 +28,9 @@ public class Spawner : MonoBehaviour
 
         if (time >= SpawnTime)
         {
+            if (Points > 10)
+                SpawnTime -= 1 * (Points / 1000f);
+
             time = 0;
             ShootObstacle();
         }

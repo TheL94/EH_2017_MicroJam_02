@@ -32,5 +32,6 @@ public class UIManager : MonoBehaviour
     public void OnLost()
     {
         GameOverPanel.SetActive(true);
+        Time.timeScale = 0;
     }
 }
