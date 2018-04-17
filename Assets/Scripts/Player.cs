@@ -43,10 +43,10 @@ public class Player : MonoBehaviour
                 transform.DOScale(Vector3.one, 1f);
                 break;
             case Shape.Vertical:
-                transform.DOScale(new Vector3(0.25f, 1.25f, 1f), 1f);
+                transform.DOScale(new Vector3(0.25f, 1.3f, 1f), 1f);
                 break;
             case Shape.Horizontal:
-                transform.DOScale(new Vector3(1.25f, 0.25f, 1f), 1f);
+                transform.DOScale(new Vector3(1.3f, 0.25f, 1f), 1f);
                 break;
         }
 
