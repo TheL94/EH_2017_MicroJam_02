@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager I;
 
+    public GameObject GameOverPanel;
     public Text Lives;
     public Text Points;
 
@@ -26,5 +27,10 @@ public class UIManager : MonoBehaviour
     public void SetPoints(int _points)
     {
         Points.text = "Points " + _points;
+    }
+
+    public void OnLost()
+    {
+        GameOverPanel.SetActive(true);
     }
 }

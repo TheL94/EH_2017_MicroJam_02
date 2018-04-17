@@ -24,9 +24,9 @@ public class Player : MonoBehaviour
 
     void Update ()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             CurrentShape = Shape.Horizontal; 
-		else if(Input.GetKey(KeyCode.S))
+		else if(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
             CurrentShape = Shape.Vertical;
         else
             CurrentShape = Shape.Full;
@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
             Life -= 1;
             UIManager.I.SetLives(Life);
             if (Life <= 0)
-                Debug.Log("Lost");
+                UIManager.I.OnLost();
         }
     }
 

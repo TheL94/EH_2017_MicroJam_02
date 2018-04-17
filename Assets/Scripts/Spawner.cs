@@ -25,7 +25,8 @@ public class Spawner : MonoBehaviour
     private void Update()
     {
         time += Time.deltaTime;
-        if(time >= SpawnTime)
+
+        if (time >= SpawnTime)
         {
             time = 0;
             ShootObstacle();
@@ -40,6 +41,11 @@ public class Spawner : MonoBehaviour
 
     void ShootObstacle()
     {
-        Instantiate(Obstacles[Random.Range(0, Obstacles.Count)], SpawnPoint.transform.position, SpawnPoint.transform.localRotation, null).Init(ObstacleSpeed, this);
+        float obstacleSpeed = ObstacleSpeed;
+
+        if(Points > 10)
+            obstacleSpeed += Points / 10f;
+
+        Instantiate(Obstacles[Random.Range(0, Obstacles.Count)], SpawnPoint.transform.position, SpawnPoint.transform.localRotation, null).Init(obstacleSpeed, this);
     }
 }
